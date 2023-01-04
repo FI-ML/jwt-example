@@ -16,7 +16,6 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
 import java.util.List;
-import java.util.Locale;
 
 @Data
 @Builder
@@ -46,8 +45,9 @@ public class Users implements UserDetails {
         return email;
 
     }
+
     @Override
-    public String getPassword(){
+    public String getPassword() {
         return password;
     }
 

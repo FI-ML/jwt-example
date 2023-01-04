@@ -1,4 +1,4 @@
-package com.example.jwtexample.controller;
+package com.example.jwtexample.tos;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -7,13 +7,11 @@ import lombok.NoArgsConstructor;
 
 @Data
 @Builder
-@NoArgsConstructor
 @AllArgsConstructor
-public class AuthenticationRegiserRequest {
-
-    private  String firstname;
+@NoArgsConstructor
+public class RegisterRequest {
+    private String firstname;
     private String lastname;
     private String email;
     private String password;
-
 }

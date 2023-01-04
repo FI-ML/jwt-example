@@ -1,6 +1,9 @@
 package com.example.jwtexample.controller;
 
 import com.example.jwtexample.service.AuthenticationService;
+import com.example.jwtexample.tos.AuthenticationRequest;
+import com.example.jwtexample.tos.AuthenticationResponse;
+import com.example.jwtexample.tos.RegisterRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -9,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("api/v1/auth")
+@RequestMapping("/api/v1/auth")
 @RequiredArgsConstructor
 public class AuthenticationController {
 
@@ -17,15 +20,15 @@ public class AuthenticationController {
 
     @PostMapping("/register")
     public ResponseEntity<AuthenticationResponse> register(
-            @RequestBody AuthenticationRegiserRequest request
-    ){
-        return ResponseEntity.ok(service.rgister(request));
+            @RequestBody RegisterRequest request
+    ) {
+        return ResponseEntity.ok(service.register(request));
     }
 
     @PostMapping("/authenticate")
     public ResponseEntity<AuthenticationResponse> authenticate(
-            @RequestBody AuthenticationRegiserRequest request
-    ){
+            @RequestBody AuthenticationRequest request
+    ) {
         return ResponseEntity.ok(service.authenticate(request));
     }
 }

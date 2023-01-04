@@ -1,4 +1,4 @@
-package com.example.jwtexample.controller;
+package com.example.jwtexample.tos;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
