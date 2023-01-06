@@ -1,5 +1,6 @@
 package com.example.jwtexample.user;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
@@ -30,8 +31,10 @@ public class Users implements UserDetails {
     private Integer id;
     private String firstname;
     private String lastname;
+    @Column(name = "email", unique = true)
     private String email;
     private String password;
+    private boolean isEnabled;
     @Enumerated(EnumType.STRING)
     private Role role;
 
@@ -68,6 +71,6 @@ public class Users implements UserDetails {
 
     @Override
     public boolean isEnabled() {
-        return false;
+        return isEnabled;
     }
 }
